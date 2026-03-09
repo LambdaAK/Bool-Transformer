@@ -42,22 +42,25 @@ def generate_dataset(
 ) -> list[tuple[str, bool]]:
     """
     Generate a dataset of (expression, result) pairs.
+    With uniform_depth=True, samples are stratified so each depth 0..max_depth
+    has roughly equal representation (simple expressions like True, False,
+    True AND False, etc. appear as often as complex nested ones).
     """
     if seed is not None:
         random.seed(seed)
 
-    seen = set()
     data = []
+    n_depths = max_depth + 1  # 0, 1, 2, ..., max_depth
+    target_per_depth = n_samples // n_depths
 
-    while len(data) < n_samples:
-        depth = random.randint(1, max_depth)
-        expr = generate_expression(max_depth=depth)
-        if expr in seen:
-            continue
-        seen.add(expr)
-        result = evaluate_expression(expr)
-        data.append((expr, result))
+    for depth in range(n_depths):
+        for _ in range(target_per_depth):
+            expr = generate_expression(max_depth=depth)
+            result = evaluate_expression(expr)
+            data.append((expr, result))
 
+    # Shuffle so depths are interleaved
+    random.shuffle(data)
     return data
 
 
@@ -86,6 +89,20 @@ def save_splits(
     val_data = shuffled[n_train : n_train + n_val]
     test_data = shuffled[n_train + n_val :]
 
+    def deduplicate(pairs: list[tuple[str, bool]]) -> list[tuple[str, bool]]:
+        """Keep first occurrence of each expression, no duplicates within split."""
+        seen = set()
+        unique = []
+        for expr, res in pairs:
+            if expr not in seen:
+                seen.add(expr)
+                unique.append((expr, res))
+        return unique
+
+    train_data = deduplicate(train_data)
+    val_data = deduplicate(val_data)
+    test_data = deduplicate(test_data)
+
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -102,7 +119,7 @@ def save_splits(
         json.dumps(to_records(test_data), indent=2)
     )
 
-    print(f"Saved {len(train_data)} train, {len(val_data)} val, {len(test_data)} test samples to {output_dir}")
+    print(f"Saved {len(train_data)} train, {len(val_data)} val, {len(test_data)} test samples to {output_dir} (deduplicated within each split)")
 
 
 if __name__ == "__main__":
