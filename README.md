@@ -37,6 +37,16 @@ python train_generator.py --epochs 50
 python generate_expressions.py --n 10 --temperature 0.8
 ```
 
+### Conditional Generation (result=True/False)
+
+Train a generator that produces expressions evaluating to a specified result:
+
+```bash
+python train_conditional_generator.py --epochs 50
+python generate_expressions.py --result True --n 5
+python generate_expressions.py --result False --n 5
+```
+
 ## Interactive Inference
 
 Load the model and evaluate expressions you type:
@@ -52,10 +62,12 @@ Enter expressions with space-separated tokens, e.g. `True AND ( False OR True )`
 - `data/generate_data.py` - Synthetic boolean expression generator
 - `data/dataset.py` - PyTorch Dataset and tokenizer
 - `data/expression_dataset.py` - Sequence dataset for the generator
+- `data/conditional_dataset.py` - Conditional dataset (result token + expression)
 - `model/transformer.py` - Encoder-only transformer
 - `model/decoder_gpt.py` - GPT-style decoder for expression generation
 - `train.py` - Training script
 - `evaluate.py` - Evaluation script
 - `infer.py` - Interactive expression evaluator
 - `train_generator.py` - Train GPT-style expression generator
+- `train_conditional_generator.py` - Train conditional generator (result=True/False)
 - `generate_expressions.py` - Generate expressions with the trained model

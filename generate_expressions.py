@@ -13,6 +13,7 @@ import torch
 
 from data.dataset import VOCAB, ID_TO_TOKEN, tokenize
 from data.expression_dataset import BOS_ID, EOS_ID, PAD_ID
+from data.conditional_dataset import RESULT_TRUE_ID, RESULT_FALSE_ID
 from model.decoder_gpt import ExpressionGPT
 
 
@@ -42,16 +43,21 @@ def generate(
     top_k: int = 0,
     seed: int = None,
     prefix: str = None,
+    result: bool = None,
 ) -> str:
     """
     Generate a single expression autoregressively.
+    If result is True/False, use conditional format [BOS] [RESULT_X] and generate.
     If prefix is provided, start from BOS + prefix tokens and complete the sequence.
     """
     if seed is not None:
         torch.manual_seed(seed)
         random.seed(seed)
 
-    if prefix:
+    if result is not None:
+        result_id = RESULT_TRUE_ID if result else RESULT_FALSE_ID
+        generated = [BOS_ID, result_id]
+    elif prefix:
         prefix_ids = tokenize(prefix.strip())
         generated = [BOS_ID] + prefix_ids
     else:
@@ -82,8 +88,12 @@ def generate(
             if next_id == EOS_ID:
                 break
 
-    # strip BOS and EOS; if we had a prefix, include it in output
-    tokens = [ID_TO_TOKEN[i] for i in generated[1:] if i != EOS_ID]
+    # strip BOS, EOS, and result token (if conditional); include prefix tokens in output
+    if result is not None:
+        # Skip BOS and RESULT_X, keep expression tokens
+        tokens = [ID_TO_TOKEN[i] for i in generated[2:] if i != EOS_ID]
+    else:
+        tokens = [ID_TO_TOKEN[i] for i in generated[1:] if i != EOS_ID]
     return " ".join(tokens)
 
 
@@ -95,6 +105,8 @@ def main():
     parser.add_argument("--top-k", type=int, default=0, help="Top-k sampling (0 = disabled)")
     parser.add_argument("--seed", type=int, default=None)
     parser.add_argument("--prefix", type=str, default=None, help="Token sequence to complete (e.g. 'True AND ')")
+    parser.add_argument("--result", type=str, default=None, choices=["True", "False"],
+        help="Generate expressions that evaluate to this result (requires conditional checkpoint)")
     args = parser.parse_args()
 
     device = torch.device(
@@ -108,13 +120,22 @@ def main():
         print("Train the generator first: python train_generator.py --epochs 50")
         return
 
+    result_bool = None
+    if args.result:
+        result_bool = args.result == "True"
+        # Use conditional checkpoint by default when --result is specified
+        if args.checkpoint == "checkpoints/generator/latest.pt":
+            args.checkpoint = "checkpoints/generator_conditional/latest.pt"
+
     print(f"Loading model from {args.checkpoint}...")
     model = load_model(args.checkpoint, device)
-    n = 1 if args.prefix and args.n == 10 else args.n  # default 1 completion when using prefix
-    if args.prefix:
+    n = 1 if (args.prefix or args.result) and args.n == 10 else args.n
+    if args.result:
+        print(f"Generating expressions that evaluate to {args.result} (temperature={args.temperature})\n")
+    elif args.prefix:
         print(f"Completing prefix: '{args.prefix}' (temperature={args.temperature})\n")
     else:
-        print(f"Generating {n} expressions (temperature={args.temperature}):\n")
+        print(f"Generating {n} expressions (temperature={args.temperature})\n")
 
     for i in range(n):
         expr = generate(
@@ -123,8 +144,9 @@ def main():
             top_k=args.top_k,
             seed=args.seed,
             prefix=args.prefix,
+            result=result_bool,
         )
-        if args.prefix:
+        if args.prefix or args.result:
             print(f"  {expr}")
         else:
             print(f"  {i+1}. {expr}")

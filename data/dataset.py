@@ -22,6 +22,8 @@ VOCAB = [
     ")",
     "[BOS]",
     "[EOS]",
+    "[RESULT_TRUE]",
+    "[RESULT_FALSE]",
 ]
 TOKEN_TO_ID = {t: i for i, t in enumerate(VOCAB)}
 ID_TO_TOKEN = {i: t for i, t in enumerate(VOCAB)}
