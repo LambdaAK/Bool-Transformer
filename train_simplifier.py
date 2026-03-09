@@ -6,6 +6,7 @@ import os
 os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
 
 import argparse
+from functools import partial
 from pathlib import Path
 
 import torch
@@ -53,15 +54,26 @@ def main():
     parser.add_argument("--dropout", type=float, default=0.1)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--cpu", action="store_true", help="Force CPU (avoids MPS issues on Mac)")
+    parser.add_argument("--max-samples", type=int, default=None, help="Subsample training data (e.g. 20000 for faster runs)")
+    parser.add_argument("--num-workers", type=int, default=0, help="DataLoader workers (4 recommended for CPU speed)")
+    parser.add_argument("--fast", action="store_true", help="Fast preset: 20k samples, 25 epochs, batch 128")
     args = parser.parse_args()
+
+    if args.fast:
+        if args.max_samples is None:
+            args.max_samples = 20000
+        args.epochs = 25
+        args.batch_size = 128
+        args.num_workers = 4
+        print("Using --fast preset")
 
     torch.manual_seed(args.seed)
     if args.cpu:
         device = torch.device("cpu")
     else:
+        # Prefer CPU over MPS: nn.Transformer has known MPS bugs (nested tensor masks)
         device = torch.device(
             "cuda" if torch.cuda.is_available()
-            else "mps" if torch.backends.mps.is_available()
             else "cpu"
         )
     print(f"Using device: {device}")
@@ -75,17 +87,25 @@ def main():
         data_dir / "simplifier_val.json",
         max_length=args.max_length,
     )
+    if args.max_samples is not None:
+        from torch.utils.data import Subset
+        n = min(args.max_samples, len(train_ds))
+        train_ds = Subset(train_ds, range(n))
+        print(f"Using {n} training samples (subsampled)")
+    collate_fn = partial(collate_simplifier, max_length=args.max_length)
     train_loader = DataLoader(
         train_ds,
         batch_size=args.batch_size,
         shuffle=True,
-        collate_fn=lambda b: collate_simplifier(b, max_length=args.max_length),
+        num_workers=args.num_workers,
+        collate_fn=collate_fn,
     )
     val_loader = DataLoader(
         val_ds,
         batch_size=args.batch_size,
         shuffle=False,
-        collate_fn=lambda b: collate_simplifier(b, max_length=args.max_length),
+        num_workers=0,
+        collate_fn=collate_fn,
     )
 
     model = SimplifierTransformer(
