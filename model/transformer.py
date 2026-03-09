@@ -100,3 +100,81 @@ class BooleanTransformer(nn.Module):
 
         logits = self.classifier(x)  # (batch, 2)
         return logits
+
+
+class MixedTransformer(nn.Module):
+    """
+    Encoder for both boolean and integer expressions.
+    Bool head: (batch, 2) logits
+    Int head: (batch, 1) regression
+    """
+
+    def __init__(
+        self,
+        vocab_size: int,
+        d_model: int = 256,
+        nhead: int = 8,
+        num_layers: int = 6,
+        dim_feedforward: int = 512,
+        max_length: int = 64,
+        dropout: float = 0.1,
+        pad_id: int = 0,
+    ):
+        super().__init__()
+        self.pad_id = pad_id
+
+        self.embedding = nn.Embedding(vocab_size, d_model, padding_idx=pad_id)
+        self.pos_encoding = PositionalEncoding(d_model, max_len=max_length, dropout=dropout)
+
+        encoder_layer = nn.TransformerEncoderLayer(
+            d_model=d_model,
+            nhead=nhead,
+            dim_feedforward=dim_feedforward,
+            dropout=dropout,
+            activation="gelu",
+            batch_first=True,
+            norm_first=False,
+        )
+        self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+
+        self.bool_head = nn.Sequential(
+            nn.Linear(d_model, d_model),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(d_model, 2),
+        )
+        self.int_head = nn.Sequential(
+            nn.Linear(d_model, d_model),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(d_model, d_model // 2),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(d_model // 2, 1),
+        )
+
+    def forward(
+        self,
+        input_ids: torch.Tensor,
+        attention_mask: Optional[torch.Tensor] = None,
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        """
+        Returns:
+            bool_logits: (batch, 2)
+            int_pred: (batch, 1)
+        """
+        if attention_mask is None:
+            attention_mask = (input_ids != self.pad_id).float()
+
+        key_padding_mask = attention_mask == 0
+
+        x = self.embedding(input_ids)
+        x = self.pos_encoding(x)
+        x = self.transformer(x, src_key_padding_mask=key_padding_mask)
+
+        mask_expanded = attention_mask.unsqueeze(-1).expand(x.size())
+        pooled = (x * mask_expanded).sum(dim=1) / mask_expanded.sum(dim=1).clamp(min=1e-9)
+
+        bool_logits = self.bool_head(pooled)
+        int_pred = self.int_head(pooled)
+        return bool_logits, int_pred

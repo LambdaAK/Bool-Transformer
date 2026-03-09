@@ -1,6 +1,9 @@
 # Bool-Transformer
 
-A transformer model that learns to evaluate boolean expressions (True, False, AND, OR, NOT).
+A transformer model that learns to evaluate and generate boolean and integer expressions.
+
+**Boolean:** True, False, AND, OR, NOT  
+**Integer:** digit-level (0-9), +, -, *, //, range -99 to 99
 
 ## Setup
 
@@ -16,16 +19,30 @@ pip install -r requirements.txt
 python data/generate_data.py --n-samples 50000 --output-dir data/splits
 ```
 
+Generates mixed boolean and integer expressions. Use `--bool-ratio 0.5` to control the mix.
+
 ## Train
 
+**Boolean-only (legacy):**
 ```bash
 python train.py --epochs 20 --batch-size 64
 ```
 
+**Mixed (bool + int):**
+```bash
+python train_mixed.py --epochs 20 --batch-size 64
+```
+
 ## Evaluate
 
+**Boolean-only:**
 ```bash
 python evaluate.py --checkpoint checkpoints/best.pt
+```
+
+**Mixed:**
+```bash
+python evaluate_mixed.py --checkpoint checkpoints/mixed/best.pt
 ```
 
 ## Expression Generator (GPT-style)
@@ -55,7 +72,10 @@ Load the model and evaluate expressions you type:
 python infer.py --checkpoint checkpoints/best.pt
 ```
 
-Enter expressions with space-separated tokens, e.g. `True AND ( False OR True )`. Type `quit` to exit.
+**Boolean:** `python infer.py`  
+**Mixed (bool + int):** `python infer_mixed.py`
+
+Enter expressions. Integer literals use digit-level: `4 2` for 42, `- 1 7` for -17.
 
 ## Project Structure
 

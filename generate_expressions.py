@@ -11,9 +11,9 @@ from pathlib import Path
 
 import torch
 
-from data.dataset import VOCAB, ID_TO_TOKEN, tokenize
+from data.dataset import VOCAB, ID_TO_TOKEN, tokenize, int_to_tokens
 from data.expression_dataset import BOS_ID, EOS_ID, PAD_ID
-from data.conditional_dataset import RESULT_TRUE_ID, RESULT_FALSE_ID
+from data.conditional_dataset import RESULT_TRUE_ID, RESULT_FALSE_ID, RESULT_INT_ID
 from model.decoder_gpt import ExpressionGPT
 
 
@@ -35,28 +35,36 @@ def load_model(checkpoint_path: str, device: torch.device, max_length: int = 64)
     return model
 
 
+TOKEN_TO_ID = {t: i for i, t in enumerate(VOCAB)}
+
+
 def generate(
     model: ExpressionGPT,
     device: torch.device,
-    max_new_tokens: int = 32,
+    max_new_tokens: int = 64,
     temperature: float = 1.0,
     top_k: int = 0,
     seed: int = None,
     prefix: str = None,
-    result: bool = None,
+    result_bool: bool = None,
+    result_int: int = None,
 ) -> str:
     """
     Generate a single expression autoregressively.
-    If result is True/False, use conditional format [BOS] [RESULT_X] and generate.
-    If prefix is provided, start from BOS + prefix tokens and complete the sequence.
+    result_bool: True/False for boolean conditional
+    result_int: int for integer conditional ([RESULT_INT] + digits)
     """
     if seed is not None:
         torch.manual_seed(seed)
         random.seed(seed)
 
-    if result is not None:
-        result_id = RESULT_TRUE_ID if result else RESULT_FALSE_ID
+    if result_bool is not None:
+        result_id = RESULT_TRUE_ID if result_bool else RESULT_FALSE_ID
         generated = [BOS_ID, result_id]
+    elif result_int is not None:
+        digit_tokens = int_to_tokens(result_int)
+        digit_ids = [TOKEN_TO_ID.get(c, PAD_ID) for c in digit_tokens]
+        generated = [BOS_ID, RESULT_INT_ID] + digit_ids
     elif prefix:
         prefix_ids = tokenize(prefix.strip())
         generated = [BOS_ID] + prefix_ids
@@ -89,9 +97,12 @@ def generate(
                 break
 
     # strip BOS, EOS, and result token (if conditional); include prefix tokens in output
-    if result is not None:
-        # Skip BOS and RESULT_X, keep expression tokens
+    if result_bool is not None:
         tokens = [ID_TO_TOKEN[i] for i in generated[2:] if i != EOS_ID]
+    elif result_int is not None:
+        # Skip BOS, [RESULT_INT], and result digits
+        n_prefix = 2 + len(int_to_tokens(result_int))
+        tokens = [ID_TO_TOKEN[i] for i in generated[n_prefix:] if i != EOS_ID]
     else:
         tokens = [ID_TO_TOKEN[i] for i in generated[1:] if i != EOS_ID]
     return " ".join(tokens)
@@ -105,8 +116,8 @@ def main():
     parser.add_argument("--top-k", type=int, default=0, help="Top-k sampling (0 = disabled)")
     parser.add_argument("--seed", type=int, default=None)
     parser.add_argument("--prefix", type=str, default=None, help="Token sequence to complete (e.g. 'True AND ')")
-    parser.add_argument("--result", type=str, default=None, choices=["True", "False"],
-        help="Generate expressions that evaluate to this result (requires conditional checkpoint)")
+    parser.add_argument("--result", default=None,
+        help="Generate expressions that evaluate to this result: True, False, or integer (e.g. 42, -5)")
     args = parser.parse_args()
 
     device = torch.device(
@@ -121,9 +132,16 @@ def main():
         return
 
     result_bool = None
+    result_int = None
     if args.result:
-        result_bool = args.result == "True"
-        # Use conditional checkpoint by default when --result is specified
+        if args.result in ("True", "False"):
+            result_bool = args.result == "True"
+        else:
+            try:
+                result_int = int(args.result)
+            except ValueError:
+                print("--result must be True, False, or an integer")
+                return
         if args.checkpoint == "checkpoints/generator/latest.pt":
             args.checkpoint = "checkpoints/generator_conditional/latest.pt"
 
@@ -144,7 +162,8 @@ def main():
             top_k=args.top_k,
             seed=args.seed,
             prefix=args.prefix,
-            result=result_bool,
+            result_bool=result_bool,
+            result_int=result_int,
         )
         if args.prefix or args.result:
             print(f"  {expr}")

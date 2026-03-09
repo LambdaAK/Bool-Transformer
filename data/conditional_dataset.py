@@ -1,27 +1,28 @@
 """
-Dataset for conditional expression generation (result=True/False).
-Format: [BOS] [RESULT_TRUE] or [RESULT_FALSE] + expression tokens + [EOS]
+Dataset for conditional expression generation.
+Bool: [BOS] [RESULT_TRUE/FALSE] expr [EOS]
+Int:  [BOS] [RESULT_INT] <digits> expr [EOS]
 """
 import json
 from pathlib import Path
 from typing import Union
 
-import torch
 from torch.utils.data import Dataset
 
-from data.dataset import tokenize, VOCAB
+from data.dataset import tokenize, VOCAB, int_to_tokens
 
 BOS_ID = VOCAB.index("[BOS]")
 EOS_ID = VOCAB.index("[EOS]")
 RESULT_TRUE_ID = VOCAB.index("[RESULT_TRUE]")
 RESULT_FALSE_ID = VOCAB.index("[RESULT_FALSE]")
+RESULT_INT_ID = VOCAB.index("[RESULT_INT]")
 PAD_ID = 0
+TOKEN_TO_ID = {t: i for i, t in enumerate(VOCAB)}
 
 
 class ConditionalExpressionDataset(Dataset):
     """
-    Dataset of conditional sequences: [BOS] [RESULT_X] expr [EOS].
-    Uses (expression, result) pairs from the evaluator data.
+    Dataset of conditional sequences for mixed bool/int.
     """
 
     def __init__(self, paths: Union[str, Path, list], max_length: int = 64):
@@ -37,11 +38,16 @@ class ConditionalExpressionDataset(Dataset):
                 records = json.load(f)
             for r in records:
                 expr = r["expression"]
+                t = r.get("type", "bool")
                 result = r["result"]
-                ids = tokenize(expr)
-                result_token = RESULT_TRUE_ID if result else RESULT_FALSE_ID
-                # BOS + [RESULT_X] + tokens + EOS
-                seq = [BOS_ID, result_token] + ids + [EOS_ID]
+
+                if t == "bool":
+                    result_token = RESULT_TRUE_ID if result else RESULT_FALSE_ID
+                    seq = [BOS_ID, result_token] + tokenize(expr) + [EOS_ID]
+                else:
+                    result_digit_ids = [TOKEN_TO_ID.get(c, PAD_ID) for c in int_to_tokens(result)]
+                    seq = [BOS_ID, RESULT_INT_ID] + result_digit_ids + tokenize(expr) + [EOS_ID]
+
                 if len(seq) <= max_length:
                     self.samples.append(seq)
 
