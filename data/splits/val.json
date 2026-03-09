@@ -1,0 +1,2002 @@
+[
+  {
+    "expression": "( NOT ( ( True AND True ) ) AND NOT ( ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND True ) AND ( True OR True ) ) OR NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) AND NOT ( False ) ) OR ( ( True AND False ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) OR NOT ( True ) ) AND ( ( False OR True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) OR NOT ( False ) ) OR ( ( False AND False ) AND ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) AND ( False AND False ) ) AND ( NOT ( True ) AND ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) AND ( ( True AND True ) AND ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) AND NOT ( True ) ) OR NOT ( ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( True OR True ) ) OR NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) OR ( ( True OR False ) OR ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( True ) ) OR NOT ( ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND NOT ( True ) ) OR ( ( True OR True ) AND ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True AND False ) ) OR ( ( True OR False ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( False AND True ) AND ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND NOT ( True ) ) AND ( NOT ( True ) OR ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False OR False ) ) OR ( NOT ( True ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) AND ( True AND False ) ) OR ( ( False AND True ) AND ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True OR True ) ) OR NOT ( ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) OR NOT ( True ) ) OR ( ( True OR False ) AND ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True OR True ) ) OR ( NOT ( True ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( NOT ( False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True AND True ) ) OR ( NOT ( False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND NOT ( True ) ) AND ( ( False OR True ) OR ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) OR ( NOT ( True ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR NOT ( True ) ) AND NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) AND NOT ( True ) ) OR ( NOT ( False ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) OR ( ( True AND False ) AND ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( False AND True ) ) OR NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) AND ( ( False AND True ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( ( False OR True ) AND ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) AND ( True OR False ) ) OR ( NOT ( True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) OR ( True AND False ) ) OR ( ( False AND False ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) AND ( ( False AND False ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True OR False ) ) OR ( NOT ( True ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) AND NOT ( False ) ) AND ( NOT ( True ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( True OR False ) ) AND NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) AND ( False AND False ) ) OR ( ( True OR True ) AND ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) OR ( False OR False ) ) AND ( ( True OR False ) OR ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR True ) ) OR NOT ( ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( True OR False ) ) OR NOT ( NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( False OR True ) ) OR ( ( True OR False ) OR ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND NOT ( True ) ) AND ( NOT ( True ) OR ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) OR ( ( True AND False ) OR ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( True ) ) AND ( ( False OR True ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True AND False ) ) OR ( ( True OR False ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( NOT ( False ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) OR ( True OR True ) ) AND ( ( False AND False ) AND ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( False AND False ) ) AND ( ( True AND False ) AND NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( True AND True ) OR ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( True AND False ) AND ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True AND True ) ) AND ( NOT ( False ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( True OR False ) ) OR ( ( False OR False ) AND ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) OR ( False AND False ) ) OR ( NOT ( True ) AND ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True OR True ) ) OR ( NOT ( True ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) AND NOT ( True ) ) AND ( ( False OR True ) OR ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( ( False OR False ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( False OR False ) ) AND ( ( True OR True ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True AND False ) ) OR ( ( True OR True ) AND ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) AND ( ( True OR True ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True AND False ) ) OR ( ( False AND True ) OR ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND NOT ( False ) ) OR ( NOT ( True ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( ( True OR False ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR NOT ( True ) ) AND ( NOT ( True ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( False ) OR ( True OR True ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( True ) ) OR ( ( False OR True ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND NOT ( False ) ) OR ( NOT ( False ) AND ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) AND NOT ( True ) ) AND ( NOT ( False ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( False OR False ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) AND ( False AND False ) ) AND ( ( True OR True ) OR NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( False OR True ) ) OR NOT ( ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( False OR False ) ) AND NOT ( ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( True AND False ) ) OR NOT ( NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( True AND True ) ) AND NOT ( ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True AND True ) ) AND ( ( False AND False ) OR ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) AND ( True OR True ) ) OR NOT ( NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( True AND False ) ) OR ( ( True AND True ) AND ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) AND NOT ( True ) ) OR NOT ( ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) AND ( True OR True ) ) AND NOT ( ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( True OR True ) ) OR ( NOT ( False ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) AND ( ( False AND False ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND True ) OR NOT ( True ) ) OR ( ( True AND True ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True AND False ) ) OR ( ( True AND False ) AND ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) AND NOT ( True ) ) OR ( NOT ( False ) AND ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False OR False ) ) OR NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False AND False ) ) AND ( ( False AND False ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( False OR False ) ) AND ( ( True AND True ) AND ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) AND NOT ( False ) ) OR ( ( True OR True ) AND ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True AND False ) ) OR NOT ( ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True OR False ) ) OR ( ( True OR False ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) AND ( False OR False ) ) OR NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( True AND True ) ) AND NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( NOT ( False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True AND True ) ) OR ( ( True AND True ) AND ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True AND False ) ) OR NOT ( ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) OR ( True OR True ) ) OR NOT ( ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) OR ( True AND True ) ) AND ( NOT ( False ) AND ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( True OR False ) ) AND ( ( False OR False ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False AND False ) ) AND ( ( True OR True ) OR NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True OR False ) ) AND NOT ( ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) AND ( True OR True ) ) OR ( NOT ( False ) AND ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( NOT ( False ) AND ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) OR ( True AND False ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( True AND False ) ) AND NOT ( ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True OR False ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) AND ( True OR True ) ) AND ( NOT ( True ) OR ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) AND ( False OR False ) ) OR ( ( False OR True ) AND ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( False OR True ) ) AND ( ( True OR True ) AND ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( True OR True ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) AND ( True AND True ) ) OR NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) AND NOT ( True ) ) OR NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( True OR False ) ) OR NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) AND NOT ( True ) ) OR NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) OR NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) AND NOT ( False ) ) AND ( ( True AND False ) OR ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( ( True AND True ) AND ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( False AND False ) ) AND ( NOT ( False ) AND ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) OR ( False OR False ) ) AND ( ( False AND True ) OR ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) AND ( True OR True ) ) AND NOT ( ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) OR NOT ( True ) ) AND ( ( True OR True ) AND ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) AND ( ( False OR True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR True ) ) OR ( ( True AND False ) OR ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR True ) ) OR ( ( True OR False ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( False AND False ) ) AND NOT ( ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) AND ( ( True AND True ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( False OR True ) ) OR ( ( True OR False ) OR ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( True OR True ) ) AND ( ( True OR False ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) AND ( True AND True ) ) AND ( ( True OR False ) AND ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) OR ( False OR True ) ) AND NOT ( ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( False OR True ) ) AND ( NOT ( False ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) AND NOT ( ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( False AND False ) ) OR ( ( True OR False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "NOT ( ( ( False AND True ) OR ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) AND ( True AND True ) ) OR ( ( False AND False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) AND NOT ( True ) ) AND ( ( False OR False ) OR ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( ( True AND True ) AND ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) AND NOT ( True ) ) AND ( NOT ( False ) OR ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True AND True ) ) OR ( ( True OR False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND NOT ( False ) ) OR ( NOT ( True ) OR ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( True OR True ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True AND True ) ) AND ( ( True OR True ) AND ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( True ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False AND False ) ) AND NOT ( ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) AND ( False AND True ) ) AND NOT ( NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( True AND True ) ) OR ( ( True OR False ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) OR ( True AND False ) ) AND ( ( False OR False ) OR ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( False OR True ) ) AND ( ( True OR True ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False AND False ) ) AND ( ( True AND True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) AND NOT ( True ) ) AND ( ( False AND True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND NOT ( True ) ) OR ( ( True OR True ) OR ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( False OR False ) ) OR ( ( False OR True ) AND ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "NOT ( ( NOT ( True ) AND ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True AND True ) ) OR ( ( False AND True ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) AND NOT ( False ) ) AND ( ( True OR True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND False ) ) OR ( ( True OR False ) OR ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( False ) ) AND ( NOT ( True ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) AND NOT ( False ) ) OR ( ( True AND True ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND NOT ( False ) ) AND ( NOT ( False ) AND ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) OR ( ( False AND True ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( NOT ( True ) AND ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True AND False ) ) OR ( NOT ( True ) OR ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) OR ( True AND True ) ) AND NOT ( ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) OR ( ( False AND True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) AND NOT ( True ) ) AND ( ( True AND True ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( False ) ) AND NOT ( ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( False ) ) OR ( NOT ( False ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) AND ( ( False AND False ) OR ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) AND NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) AND NOT ( False ) ) OR ( ( False OR True ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) OR ( NOT ( True ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( True OR False ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND True ) OR ( True OR False ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND NOT ( True ) ) AND ( NOT ( True ) OR NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND NOT ( True ) ) AND ( NOT ( True ) OR ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False AND True ) ) AND ( ( True OR False ) AND ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) AND ( False AND True ) ) OR NOT ( ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) OR NOT ( True ) ) OR ( ( False OR True ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) AND ( True AND False ) ) AND ( ( False AND False ) AND ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False OR True ) ) OR ( NOT ( False ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) AND ( True OR True ) ) AND ( ( False OR False ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) OR NOT ( True ) ) OR NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( True OR True ) AND ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( ( False OR False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( False ) ) OR ( ( True AND False ) AND NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False OR True ) ) AND NOT ( NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) AND NOT ( False ) ) OR ( ( True AND True ) OR ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND NOT ( False ) ) OR ( NOT ( False ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) AND NOT ( False ) ) OR NOT ( ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) AND ( False AND False ) ) OR NOT ( ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( True AND True ) ) OR ( ( False OR False ) AND NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) OR ( True AND False ) ) OR NOT ( ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True OR True ) ) OR ( NOT ( True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) OR NOT ( False ) ) OR ( NOT ( False ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( False OR False ) AND ( True AND True ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR True ) ) AND ( ( False OR False ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) OR NOT ( True ) ) AND ( NOT ( False ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) AND NOT ( ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( False OR True ) ) AND ( ( True AND True ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) AND ( NOT ( False ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( False AND False ) ) AND NOT ( ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) AND ( False AND False ) ) AND ( ( True OR True ) AND ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( NOT ( False ) AND ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( False AND False ) ) OR ( ( True OR False ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( False ) ) OR NOT ( ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True OR False ) ) OR ( ( False AND True ) OR ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) AND NOT ( False ) ) AND ( ( False OR True ) AND ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) AND ( NOT ( True ) AND ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) AND ( NOT ( False ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( False OR True ) ) OR NOT ( ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False AND True ) ) AND ( NOT ( True ) OR ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) OR NOT ( ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( True ) ) AND ( NOT ( False ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( True AND False ) ) AND ( ( True AND True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) AND ( NOT ( False ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) AND NOT ( True ) ) AND ( NOT ( True ) OR NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( True AND True ) ) AND ( ( False OR False ) AND NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) AND NOT ( False ) ) OR ( NOT ( True ) AND ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( True ) ) OR NOT ( NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) AND NOT ( True ) ) AND ( NOT ( False ) OR ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True AND True ) ) AND ( NOT ( False ) AND ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) OR NOT ( False ) ) OR ( ( True OR False ) OR ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) AND ( NOT ( False ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) AND ( ( True OR False ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND True ) OR ( False OR False ) ) OR ( ( False OR False ) AND NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True AND True ) ) OR ( ( True AND True ) AND ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( False ) ) AND ( NOT ( False ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( False AND False ) ) OR ( ( True OR True ) AND ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( True ) ) AND ( NOT ( True ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True AND True ) ) AND NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) OR ( ( True OR False ) OR ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) OR ( False AND False ) ) AND ( ( True OR True ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) AND NOT ( True ) ) OR NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( True OR True ) ) OR NOT ( ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR False ) ) OR NOT ( NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) OR ( True AND True ) ) AND NOT ( ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( True ) ) OR ( ( False AND True ) AND ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( ( True OR True ) OR ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( False AND True ) ) AND ( NOT ( False ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( True OR False ) ) AND NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( False OR True ) ) OR ( NOT ( True ) AND NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND NOT ( False ) ) OR ( NOT ( False ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( True ) ) AND NOT ( ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( True AND True ) ) OR ( ( False AND True ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( False OR True ) ) OR ( ( False OR False ) AND NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( False AND True ) OR ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) AND ( False AND True ) ) OR ( NOT ( True ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( False OR False ) ) AND ( NOT ( False ) OR ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( False ) ) OR ( ( False OR True ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) AND NOT ( True ) ) AND NOT ( ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( False OR True ) ) AND ( ( True OR False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( True AND True ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True AND False ) ) OR ( ( False AND False ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( True AND True ) ) OR ( ( False OR False ) OR ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) AND NOT ( False ) ) AND ( ( False OR False ) AND ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) OR NOT ( False ) ) OR ( NOT ( False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) OR ( True AND True ) ) OR NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) OR ( False OR False ) ) OR NOT ( ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) AND ( ( False AND True ) AND ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) AND ( False AND False ) ) OR ( ( False AND False ) AND ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( ( True AND True ) OR ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) AND NOT ( False ) ) OR ( ( False AND False ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) AND ( False OR False ) ) AND NOT ( ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( True OR False ) AND ( True AND True ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) OR NOT ( ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( False OR False ) ) AND NOT ( NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND True ) AND NOT ( False ) ) AND NOT ( ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( ( False OR True ) AND NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( False AND False ) ) AND NOT ( ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( True AND False ) ) AND NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( True OR True ) ) OR ( NOT ( False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) AND ( False AND False ) ) AND ( ( False AND False ) AND ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True AND False ) ) OR NOT ( ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) OR NOT ( True ) ) AND ( ( True OR False ) OR ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) OR ( ( True AND False ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( True AND True ) OR ( False AND True ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( False AND False ) ) OR ( NOT ( True ) OR ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( False OR False ) ) OR ( ( False AND True ) AND ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( ( False OR True ) AND NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( False OR False ) ) AND ( ( False OR True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True OR False ) ) AND NOT ( ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( False ) ) AND ( ( False OR False ) AND ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) OR NOT ( False ) ) AND ( ( True OR False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( False AND False ) OR ( False OR False ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) OR NOT ( False ) ) OR ( ( True AND True ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( True ) ) OR ( NOT ( True ) OR ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) AND ( False AND False ) ) AND NOT ( ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( True AND False ) AND NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND NOT ( False ) ) AND ( ( False AND False ) AND ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) AND ( ( True OR True ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND False ) ) OR ( ( True AND True ) OR ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( False AND True ) ) AND ( NOT ( False ) OR ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( False AND True ) ) OR ( ( True AND True ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) OR ( NOT ( True ) AND ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( ( False OR False ) OR ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) AND ( ( False OR True ) OR ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) AND ( ( False OR True ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) AND ( ( False AND True ) OR ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True OR False ) ) OR NOT ( ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR False ) ) OR ( ( False OR False ) AND ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR False ) ) OR ( ( True AND True ) AND ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) AND ( False AND False ) ) OR NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True AND False ) ) OR NOT ( ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) OR NOT ( True ) ) AND ( ( True AND False ) OR ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) AND NOT ( False ) ) OR ( ( True OR False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) OR ( True AND True ) ) OR NOT ( ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) AND ( ( False AND True ) OR ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) AND NOT ( False ) ) AND ( ( True OR False ) OR ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) AND ( ( True OR True ) AND NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( False AND True ) ) OR ( ( True OR True ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) AND NOT ( True ) ) AND ( NOT ( False ) OR ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) AND ( ( True OR True ) OR NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND True ) OR ( True OR False ) ) OR ( ( True AND False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False AND False ) ) AND ( ( False OR False ) OR ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False OR True ) ) OR ( ( True OR False ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND NOT ( True ) ) AND ( ( False AND True ) AND ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( True OR False ) ) OR ( ( False OR False ) AND ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True AND False ) ) OR ( ( False AND True ) AND ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) OR NOT ( True ) ) AND ( NOT ( True ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( False AND False ) ) AND NOT ( NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) OR ( False OR False ) ) AND ( ( False AND False ) OR ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) AND NOT ( False ) ) OR ( ( True AND False ) AND ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) AND NOT ( False ) ) OR ( NOT ( True ) AND ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) AND ( NOT ( True ) OR NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( ( False OR True ) OR ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True OR True ) ) OR ( ( False AND True ) AND ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( True AND True ) ) AND ( ( False AND False ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) AND ( True AND False ) ) OR NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( True ) AND ( False OR False ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( True AND True ) ) AND ( NOT ( False ) AND ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False AND False ) ) OR ( ( False AND True ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) AND ( False AND False ) ) AND ( ( False OR False ) OR NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( False AND True ) ) AND NOT ( ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True AND True ) ) AND NOT ( ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( True AND True ) ) AND ( ( False OR False ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( False OR False ) ) AND ( ( True OR True ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( False AND True ) ) AND ( ( False AND True ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( False AND True ) ) AND ( ( False AND False ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True OR True ) ) AND ( ( True OR True ) OR ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) AND ( ( False AND True ) AND ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( True OR True ) ) OR NOT ( ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( False AND True ) ) AND NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True OR True ) ) AND ( ( False OR True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) AND NOT ( True ) ) OR NOT ( ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( False ) ) OR NOT ( ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) AND ( False AND False ) ) OR ( ( False OR False ) AND NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( ( True AND False ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( False OR False ) ) OR NOT ( ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) AND ( NOT ( False ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( ( True AND False ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) OR ( False OR True ) ) OR ( NOT ( True ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False AND False ) ) OR ( ( False OR False ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False OR False ) ) OR ( ( False AND True ) AND ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) OR ( ( False OR True ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) OR ( False OR True ) ) AND NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( False OR False ) ) AND ( ( True AND False ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True AND True ) ) OR ( ( False OR True ) AND ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "NOT ( ( ( True OR True ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) AND ( ( True AND False ) AND ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True AND True ) ) AND ( ( False OR True ) AND ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) OR NOT ( False ) ) OR ( NOT ( True ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "NOT ( ( ( True OR False ) AND ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( False AND False ) ) OR ( NOT ( False ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( False OR True ) ) OR NOT ( NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "NOT ( ( ( False AND False ) OR ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) AND ( True AND True ) ) OR NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) OR ( False AND False ) ) OR ( ( False OR True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( True OR True ) AND ( False AND True ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( True OR False ) ) AND NOT ( ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) AND ( False AND False ) ) OR NOT ( ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) OR ( ( True OR True ) AND ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) AND ( False OR False ) ) AND ( NOT ( False ) OR ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( False AND False ) ) AND ( NOT ( False ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True AND True ) ) AND ( ( False OR False ) AND ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( True ) ) OR ( NOT ( False ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True OR True ) ) AND ( ( False AND True ) AND ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( False ) ) OR ( NOT ( False ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True OR True ) ) OR ( ( True AND False ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( True AND False ) ) AND ( ( False AND False ) AND ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False OR False ) ) OR ( ( True OR False ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) AND ( NOT ( False ) OR ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND ( False AND False ) ) OR ( ( False AND False ) OR ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( NOT ( False ) AND ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) AND ( True AND False ) ) AND ( NOT ( False ) OR ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) AND NOT ( ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True AND False ) ) AND ( ( True OR False ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( False AND True ) ) AND ( NOT ( False ) AND ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR NOT ( False ) ) AND ( ( False OR False ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) AND NOT ( True ) ) AND ( ( True AND True ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) AND NOT ( True ) ) AND NOT ( ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True AND True ) ) OR ( ( True OR True ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) AND ( True OR True ) ) OR NOT ( ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) AND ( True AND False ) ) OR ( ( False AND True ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) OR ( False OR True ) ) AND NOT ( ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) OR NOT ( False ) ) AND ( ( True OR False ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True OR False ) ) OR ( NOT ( True ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND NOT ( False ) ) AND ( ( True OR True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( False ) ) AND ( ( False AND True ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) AND NOT ( False ) ) AND ( NOT ( False ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND False ) ) AND ( NOT ( True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( True OR True ) OR NOT ( True ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) OR NOT ( False ) ) AND ( ( True AND False ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "NOT ( ( NOT ( False ) AND ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( False ) ) AND ( ( True AND False ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( ( True AND True ) OR ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( ( True OR False ) AND ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) AND ( ( True AND False ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( False AND True ) ) OR ( ( True AND True ) OR ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True AND True ) ) AND NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) OR NOT ( True ) ) OR NOT ( ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( ( False AND True ) OR ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) AND NOT ( True ) ) OR NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( False AND True ) ) AND NOT ( ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) OR NOT ( False ) ) AND NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND False ) OR NOT ( False ) ) OR ( NOT ( False ) AND ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) OR ( False AND False ) ) OR ( ( True OR True ) AND ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) AND ( True OR True ) ) OR ( NOT ( True ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( False AND True ) ) OR ( NOT ( True ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND True ) OR NOT ( True ) ) AND ( ( True AND True ) AND ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) OR ( NOT ( True ) OR ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False AND False ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( True OR True ) AND ( True AND True ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True OR False ) ) AND ( ( False OR True ) AND ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( ( False AND False ) AND NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( False OR True ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "NOT ( ( ( False OR True ) OR ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( True AND False ) ) AND NOT ( ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) AND NOT ( False ) ) OR ( NOT ( True ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) OR ( False AND False ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True AND True ) ) OR ( NOT ( False ) AND ( False AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND NOT ( False ) ) OR NOT ( ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False AND True ) ) OR ( ( True OR False ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( True AND False ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) AND ( False OR True ) ) AND ( NOT ( True ) AND NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( True AND True ) ) OR NOT ( NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) AND NOT ( False ) ) AND NOT ( ( False AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "NOT ( ( ( False OR True ) AND NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( False OR True ) ) OR ( NOT ( False ) AND ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( False OR True ) ) AND NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True OR False ) ) OR ( ( False OR True ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) AND NOT ( True ) ) OR ( ( True AND False ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( True OR True ) ) AND NOT ( ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False OR False ) ) AND ( NOT ( True ) OR ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR False ) OR NOT ( False ) ) OR ( ( True OR False ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( True OR True ) ) OR ( ( False AND True ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) OR ( False AND True ) ) AND ( ( False AND False ) OR ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False OR True ) ) AND NOT ( ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( False AND True ) ) OR ( NOT ( True ) OR ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "NOT ( ( False OR True ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( False OR True ) ) OR ( ( True OR True ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) OR NOT ( True ) ) OR ( NOT ( True ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) AND NOT ( False ) ) AND ( NOT ( True ) OR ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR NOT ( True ) ) AND ( NOT ( True ) AND NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True OR True ) ) OR ( ( True AND False ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) OR ( True AND False ) ) OR NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) AND NOT ( True ) ) AND ( NOT ( False ) OR ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) AND ( False AND False ) ) AND NOT ( ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) AND ( False OR True ) ) AND ( NOT ( False ) AND ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND True ) AND ( True OR False ) ) OR ( ( True AND True ) AND ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND NOT ( True ) ) OR ( ( True AND True ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR False ) AND ( True AND True ) ) AND NOT ( NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False OR False ) ) AND ( NOT ( True ) AND ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( True AND True ) ) OR ( ( True OR True ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True AND True ) ) OR ( ( False AND False ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) OR NOT ( False ) ) AND ( ( False OR True ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) OR NOT ( True ) ) AND ( ( True AND False ) OR ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR False ) OR NOT ( True ) ) OR ( ( False OR False ) AND NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( False AND False ) ) OR NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( True AND False ) ) AND ( ( False OR True ) AND ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "NOT ( ( ( False AND False ) AND ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR False ) AND NOT ( True ) ) AND NOT ( ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) OR ( True AND True ) ) OR ( NOT ( False ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True OR True ) OR ( False OR True ) ) AND ( ( False OR True ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR False ) ) AND NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR NOT ( True ) ) AND ( ( False AND False ) OR NOT ( True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( False OR True ) ) AND ( ( True OR True ) AND ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) OR ( ( False OR True ) OR ( True OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( False AND False ) OR ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True AND True ) ) AND ( ( False AND True ) OR ( False OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( NOT ( False ) AND ( True AND True ) ) OR ( ( False OR True ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) OR NOT ( True ) ) OR ( NOT ( False ) OR NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( False ) AND NOT ( True ) ) OR ( NOT ( True ) AND ( False AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND False ) AND NOT ( False ) ) OR ( NOT ( False ) AND ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( False ) ) OR ( ( False OR False ) OR ( False AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) OR NOT ( ( True OR False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR False ) ) AND ( ( True OR False ) OR ( True AND False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False OR True ) OR ( True AND True ) ) OR ( ( False AND True ) OR ( True AND True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False OR True ) OR NOT ( False ) ) OR ( ( True OR False ) OR ( False OR False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( ( False OR False ) ) OR ( ( False AND True ) AND NOT ( False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND NOT ( False ) ) OR ( ( False OR False ) OR ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( False AND True ) OR NOT ( True ) ) OR NOT ( NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) AND ( ( False OR True ) OR ( True OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) AND ( True AND True ) ) OR ( NOT ( True ) AND ( True AND True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( True AND True ) OR ( False AND True ) ) AND NOT ( ( True AND False ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( NOT ( True ) OR ( True OR False ) ) AND ( NOT ( False ) AND ( False OR True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( ( ( True AND False ) AND ( False AND True ) ) AND NOT ( ( True OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) AND ( False AND False ) ) AND ( ( True OR False ) OR NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( ( ( False AND False ) OR ( False OR False ) ) AND NOT ( NOT ( False ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( False OR False ) ) AND ( ( True AND True ) OR NOT ( True ) ) )",
+    "result": true
+  },
+  {
+    "expression": "( NOT ( NOT ( True ) ) AND NOT ( ( False OR True ) ) )",
+    "result": false
+  },
+  {
+    "expression": "( NOT ( ( True OR True ) ) AND ( ( False OR False ) AND ( False AND False ) ) )",
+    "result": false
+  }
+]
