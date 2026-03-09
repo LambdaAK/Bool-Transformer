@@ -7,6 +7,7 @@ import os
 os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
 
 import argparse
+import itertools
 from pathlib import Path
 
 import torch
@@ -77,7 +78,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-dir", type=str, default="data/splits")
     parser.add_argument("--checkpoint-dir", type=str, default="checkpoints")
-    parser.add_argument("--epochs", type=int, default=20)
+    parser.add_argument("--epochs", type=int, default=None, help="Max epochs (default: unlimited, train until Ctrl+C)")
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--d-model", type=int, default=128)
@@ -135,8 +136,9 @@ def main():
     ckpt_dir.mkdir(parents=True, exist_ok=True)
     best_val_acc = 0.0
 
-    # Training loop
-    for epoch in range(1, args.epochs + 1):
+    # Training loop (infinite unless --epochs specified)
+    epoch_iter = itertools.count(1) if args.epochs is None else range(1, args.epochs + 1)
+    for epoch in epoch_iter:
         train_loss, train_acc = train_epoch(model, train_loader, optimizer, criterion, device)
         val_loss, val_acc = evaluate(model, val_loader, criterion, device)
 
@@ -155,6 +157,9 @@ def main():
                 ckpt_dir / "best.pt",
             )
             print(f"  -> Saved best model (val acc: {val_acc:.4f})")
+
+        if args.epochs is not None and epoch >= args.epochs:
+            break
 
     print(f"\nTraining complete. Best val accuracy: {best_val_acc:.4f}")
 
