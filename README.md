@@ -1,6 +1,6 @@
 # Bool-Transformer
 
-A transformer model that learns to evaluate boolean expressions (True, False, AND, OR, NOT).
+Transformer models for boolean expressions: **evaluation**, **generation**, and **simplification**.
 
 ## Setup
 
@@ -10,27 +10,43 @@ source venv/bin/activate  # or `venv\Scripts\activate` on Windows
 pip install -r requirements.txt
 ```
 
-## Generate Data
+---
+
+## 1. Expression Evaluator
+
+Encoder-only transformer that classifies expressions as True or False.
+
+### Generate Data
 
 ```bash
-python data/generate_data.py --n-samples 50000 --output-dir data/splits
+python -m data.generate_data --n-samples 50000 --output-dir data/splits
 ```
 
-## Train
+### Train
 
 ```bash
 python train.py --epochs 20 --batch-size 64
 ```
 
-## Evaluate
+### Evaluate
 
 ```bash
 python evaluate.py --checkpoint checkpoints/best.pt
 ```
 
-## Expression Generator (GPT-style)
+### Interactive Inference
 
-Train a decoder-only transformer to *generate* valid boolean expressions:
+```bash
+python infer.py --checkpoint checkpoints/best.pt
+```
+
+Enter expressions with space-separated tokens, e.g. `True AND ( False OR True )`. Type `quit` to exit.
+
+---
+
+## 2. Expression Generator (GPT-style)
+
+Decoder-only transformer that *generates* valid boolean expressions.
 
 ```bash
 python train_generator.py --epochs 50
@@ -39,35 +55,55 @@ python generate_expressions.py --n 10 --temperature 0.8
 
 ### Conditional Generation (result=True/False)
 
-Train a generator that produces expressions evaluating to a specified result:
-
 ```bash
 python train_conditional_generator.py --epochs 50
 python generate_expressions.py --result True --n 5
 python generate_expressions.py --result False --n 5
 ```
 
-## Interactive Inference
+---
 
-Load the model and evaluate expressions you type:
+## 3. Expression Simplifier (Seq2Seq)
+
+Encoder-decoder transformer that simplifies boolean expressions by learning logical identities (e.g. `True AND X` → `X`, `NOT NOT X` → `X`). Uses variables **A, B, C, D, E** in addition to True/False.
+
+### Generate Data
 
 ```bash
-python infer.py --checkpoint checkpoints/best.pt
+python -m data.generate_simplification_data --n-samples 100000 --output-dir data/splits
 ```
 
-Enter expressions with space-separated tokens, e.g. `True AND ( False OR True )`. Type `quit` to exit.
+### Train
 
-## Project Structure
+```bash
+python train_simplifier.py --epochs 50 --batch-size 64
+```
 
-- `data/generate_data.py` - Synthetic boolean expression generator
-- `data/dataset.py` - PyTorch Dataset and tokenizer
-- `data/expression_dataset.py` - Sequence dataset for the generator
-- `data/conditional_dataset.py` - Conditional dataset (result token + expression)
-- `model/transformer.py` - Encoder-only transformer
-- `model/decoder_gpt.py` - GPT-style decoder for expression generation
-- `train.py` - Training script
-- `evaluate.py` - Evaluation script
-- `infer.py` - Interactive expression evaluator
-- `train_generator.py` - Train GPT-style expression generator
-- `train_conditional_generator.py` - Train conditional generator (result=True/False)
-- `generate_expressions.py` - Generate expressions with the trained model
+For faster training (20k samples, 25 epochs):
+
+```bash
+python train_simplifier.py --fast
+```
+
+### Evaluate
+
+```bash
+python evaluate_simplifier.py --checkpoint checkpoints/simplifier/best.pt
+```
+
+### Simplify Expressions
+
+```bash
+# Single expression
+python simplify_expression.py "( True AND ( A ) )"
+
+# Multiple expressions
+python simplify_expression.py "( True AND ( A ) )" "( False OR ( B ) )" "NOT ( NOT ( C ) )"
+
+# Interactive mode
+python simplify_expression.py --interactive
+```
+
+Format: space-separated tokens. Variables: A, B, C, D, E.
+
+---
