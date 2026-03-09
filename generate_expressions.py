@@ -11,7 +11,7 @@ from pathlib import Path
 
 import torch
 
-from data.dataset import VOCAB, ID_TO_TOKEN
+from data.dataset import VOCAB, ID_TO_TOKEN, tokenize
 from data.expression_dataset import BOS_ID, EOS_ID, PAD_ID
 from model.decoder_gpt import ExpressionGPT
 
@@ -41,15 +41,21 @@ def generate(
     temperature: float = 1.0,
     top_k: int = 0,
     seed: int = None,
+    prefix: str = None,
 ) -> str:
     """
     Generate a single expression autoregressively.
+    If prefix is provided, start from BOS + prefix tokens and complete the sequence.
     """
     if seed is not None:
         torch.manual_seed(seed)
         random.seed(seed)
 
-    generated = [BOS_ID]
+    if prefix:
+        prefix_ids = tokenize(prefix.strip())
+        generated = [BOS_ID] + prefix_ids
+    else:
+        generated = [BOS_ID]
     model.eval()
 
     with torch.no_grad():
@@ -76,7 +82,8 @@ def generate(
             if next_id == EOS_ID:
                 break
 
-    tokens = [ID_TO_TOKEN[i] for i in generated[1:-1]]  # strip BOS and EOS
+    # strip BOS and EOS; if we had a prefix, include it in output
+    tokens = [ID_TO_TOKEN[i] for i in generated[1:] if i != EOS_ID]
     return " ".join(tokens)
 
 
@@ -87,6 +94,7 @@ def main():
     parser.add_argument("--temperature", type=float, default=0.8)
     parser.add_argument("--top-k", type=int, default=0, help="Top-k sampling (0 = disabled)")
     parser.add_argument("--seed", type=int, default=None)
+    parser.add_argument("--prefix", type=str, default=None, help="Token sequence to complete (e.g. 'True AND ')")
     args = parser.parse_args()
 
     device = torch.device(
@@ -102,13 +110,27 @@ def main():
 
     print(f"Loading model from {args.checkpoint}...")
     model = load_model(args.checkpoint, device)
-    print(f"Generating {args.n} expressions (temperature={args.temperature}):\n")
+    n = 1 if args.prefix and args.n == 10 else args.n  # default 1 completion when using prefix
+    if args.prefix:
+        print(f"Completing prefix: '{args.prefix}' (temperature={args.temperature})\n")
+    else:
+        print(f"Generating {n} expressions (temperature={args.temperature}):\n")
 
-    for i in range(args.n):
-        expr = generate(model, device, temperature=args.temperature, top_k=args.top_k, seed=args.seed)
-        print(f"  {i+1}. {expr}")
+    for i in range(n):
+        expr = generate(
+            model, device,
+            temperature=args.temperature,
+            top_k=args.top_k,
+            seed=args.seed,
+            prefix=args.prefix,
+        )
+        if args.prefix:
+            print(f"  {expr}")
+        else:
+            print(f"  {i+1}. {expr}")
 
-    print("\nNote: Some outputs may be invalid. Train longer for better grammar.")
+    if not args.prefix:
+        print("\nNote: Some outputs may be invalid. Train longer for better grammar.")
 
 
 if __name__ == "__main__":
